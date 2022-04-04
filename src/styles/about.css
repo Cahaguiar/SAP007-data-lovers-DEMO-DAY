@@ -1,0 +1,251 @@
+:root {
+    --default-font: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    --default-header-footer-color: #0c1c3e;
+    --default-transparent-header-color: #0c1c3ef1;
+    --default-background-color: #1d4396;
+    --default-primary-font-color: white;
+    --default-secondary-font-color: #0c1c3e;
+    --default-footer-font-color: gray;
+    --default-yellow: rgb(255, 203, 8);
+    --bar-hover-color-over: red;
+    --default-button-hover-color: #050d1f;
+}
+
+/* ESTILIZAÇÃO DA LISTA DO MENU */
+.menu-list {
+    background-color: var(--default-transparent-header-color);
+    height: 100%;
+    border-top: 0.1rem solid var(--default-footer-font-color);
+    border-bottom: 0.1rem solid var(--default-footer-font-color);
+    margin-top: 4.04rem;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    z-index: 1;
+}
+
+.menu-item {
+    list-style: none;
+    width: 90rem;
+    padding-top: 0.938rem;
+    padding-bottom: 0.938rem;
+}
+
+.menu-item:nth-child(1) a {
+    margin-left: 82.8rem;
+}
+
+.menu-item:nth-child(2) a {
+    margin-left: 79.3rem;
+}
+
+.menu-item:nth-child(3) a {
+    margin-left: 80rem;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--default-primary-font-color);
+}
+
+.nav-bar a:hover {
+    color: var(--default-yellow);
+}
+
+/* BARRA DE OPÇÕES */
+.navbar-options {
+    height: 60px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: var(--default-primary-font-color);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.navbar-options button {
+    font-size: 18px;
+    height: 40px;
+    width: 150px;
+    background: none;
+    font-weight: bold;
+    text-align: center;
+}
+
+.navbar-options button:hover,
+.navbar-options button:focus,
+.navbar-options button.active {
+    font-size: 19px;
+    color: var(--bar-hover-color-over);
+}
+
+/* ESTILIZAÇÃO DO BACKGROUND */
+.main-content::before {
+    content: " ";
+    background-image: url(../styles/img/background_sky.jpeg);
+    background-size: cover;
+    height: 112%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.6;
+    position: absolute;
+    z-index: -1;
+}
+
+/* CONTÊINER DE INFORMAÇÕES */
+.main-content {
+    font-size: 1.2rem;
+    color: var(--default-secondary-font-color);
+    background-color: var(--default-primary-font-color);
+    height: 28rem;
+    width: 60%;
+    border-radius: 10px;
+    padding: 36px;
+    margin: 1.2rem auto 1.2rem auto;
+}
+
+.main-content section p,
+.main-content section h1 {
+    padding: 10px 50px;
+}
+
+/* ESTILIZAÇÃO DO FOOTER */
+.footer-navigation {
+    font-size: 1rem;
+    background-color: var(--default-header-footer-color);
+    height: 6.2rem;
+    width: 100%;
+    margin-bottom: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+}
+
+.footer-links {
+    display: grid;
+    line-height: 1.3rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: var(--default-footer-font-color);
+}
+
+.footer-links a:hover {
+    color: var(--default-yellow);
+}
+
+.footer-buttonsDownload button {
+    background-color: var(--default-header-footer-color);
+    margin-right: 1.5rem;
+}
+
+.footer-buttonsDownload button img {
+    height: 2.5rem;
+}
+
+.footer-githubLink a img {
+    height: 3rem;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1300px){
+    /* ESTILIZAÇÃO DO BACKGROUND */
+    .main-content::before {
+        height: 115%;
+    }
+    /* CONTÊINER DE INFORMAÇÕES */
+    .main-content {
+        font-size: 1rem;
+        height: 22.6rem;
+        width: 80%;
+        padding: 36px;
+        margin: 1.2rem auto 1.2rem auto;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    /* BARRA DE OPÇÕES */
+    .navbar-options button {
+        font-size: 13px;
+        height: 35px;
+        width: 110px;
+    }
+    /* ESTILIZAÇÃO DO BACKGROUND */
+    .main-content::before {
+        height: 115%;
+    }
+    /* CONTÊINER DE INFORMAÇÕES */
+    .main-content {
+        font-size: 1rem;
+        height: 22.6rem;
+        width: 80%;
+        padding: 36px;
+        margin: 1.2rem auto 1.2rem auto;
+    }
+    .main-content section p,
+    .main-content section h1 {
+        padding: 8px 10px;
+    }
+}
+
+@media screen and (max-width: 560px) {
+    /* CONTÊINER DE INFORMAÇÕES */
+    .main-content {
+        font-size: 0.9rem;
+        height: 22.6rem;
+        width: 80%;
+        padding: 36px;
+        margin: 1.2rem auto 1.2rem auto;
+    }
+    .main-content section p,
+    .main-content section h1 {
+        padding: 0.1rem 0;
+    }
+    .main-content section h1 {
+        font-size: 1.2rem;
+    }
+    /* ESTILIZAÇÃO DO FOOTER */
+    .footer-navigation {
+        font-size: 0.7rem;
+    }
+    .footer-links {
+        line-height: 1rem;
+    }
+    .footer-buttonsDownload button img {
+        height: 2rem;
+    }
+    .footer-buttonsDownload button {
+        margin-right: 0;
+        display: flex;
+    }
+    .footer-githubLink a img {
+        height: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    /* BARRA DE OPÇÕES */
+    .navbar-options button {
+        font-size: 12px;
+        height: 30px;
+        width: 90px;
+    }
+    /* CONTÊINER DE INFORMAÇÕES */
+    .main-content {
+        font-size: 0.83rem;
+        width: 75%;
+    }
+    .main-content section p,
+    .main-content section h1 {
+        padding: 0.1rem 0;
+    }
+    .main-content section h1 {
+        font-size: 0.9rem;
+    }
+}

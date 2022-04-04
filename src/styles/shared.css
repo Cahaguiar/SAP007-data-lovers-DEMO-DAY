@@ -1,0 +1,95 @@
+/* CONFIGURAÇÃO GERAL */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--default-font);
+    background-color: var(--default-background-color);
+}
+
+/* ESTILIZAÇÃO DO HEADER */
+.nav-bar {
+    background-color: var(--default-transparent-header-color);
+    height: 4.375rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-logo {
+    background: none;
+    margin-top: 0.188rem;
+    margin-left: 0.6rem;
+    align-self: flex-start;
+}
+
+.nav-bar-img {
+    height: 5rem;
+}
+
+.navbar-menu {
+    margin: 0.315rem 0.6rem 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.checkbox-menu {
+    opacity: 0;
+}
+
+.hamburguer-menu label {
+    height: 1.25rem;
+    width: 2.188rem;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+
+.hamburguer-menu label span {
+    background: var(--default-primary-font-color);
+    height: 0.313rem;
+    width: 100%;
+    border-radius: 1.875rem;
+    display: block;
+    position: absolute;
+    transition: 0.25s ease-in-out;
+}
+
+.hamburguer-menu label span:nth-child(1) {
+    top: 0;
+}
+
+.hamburguer-menu label span:nth-child(2) {
+    top: 0.5rem;
+}
+
+.hamburguer-menu label span:nth-child(3) {
+    top: 1rem;
+}
+
+#checkbox-menu:checked + label span:nth-child(1) {
+    top: 0.5rem;
+    transform: rotate(-45deg);
+}
+
+#checkbox-menu:checked + label span:nth-child(2) {
+    opacity: 0;
+}
+
+#checkbox-menu:checked + label span:nth-child(3) {
+    top: 0.5rem;
+    transform: rotate(45deg);
+}
+
+.menu-item.hide {
+    display: none;
+}
