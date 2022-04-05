@@ -11,79 +11,81 @@
 </head>
 
 <body>
-  <header>
-    <nav class="nav-bar">
-      <button class="button-logo">
-        <a href="#">
-          <img class="nav-bar-img" src="./styles/img/logo.png" alt="Logo da página">
-        </a>
-      </button>
-      <div class="navbar-menu">
-        <div class="hamburguer-menu"> <!-- ÍCONE DO MENU HAMBÚRGUER -->
-          <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
-          <label for="checkbox-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
+  <div class="root">
+    <header>
+      <nav class="nav-bar">
+        <button class="button-logo">
+          <a href="#">
+            <img class="nav-bar-img" src="./styles/img/logo.png" alt="Logo da página">
+          </a>
+        </button>
+        <div class="navbar-menu">
+          <div class="hamburguer-menu"> <!-- ÍCONE DO MENU HAMBÚRGUER -->
+            <input type="checkbox" class="checkbox-menu" id="checkbox-menu">
+            <label for="checkbox-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </label>
+          </div>
+          <ul class="menu-list" id="menu-list">
+            <li class="menu-item hide">
+              <a href="./about.html">Sobre</a>
+            </li>
+            <li class="menu-item hide">
+              <a href="https://www.pokemon.com/br/" target="_blank">Site oficial Pokémon</a>
+            </li>
+            <li class="menu-item hide">
+              <a href="https://pokemongolive.com/pt_br/" target="_blank">Site oficial do jogo</a>
+            </li>
+          </ul>
         </div>
-        <ul class="menu-list" id="menu-list">
-          <li class="menu-item hide">
-            <a href="./about.html">Sobre</a>
-          </li>
-          <li class="menu-item hide">
-            <a href="https://www.pokemon.com/br/" target="_blank">Site oficial Pokémon</a>
-          </li>
-          <li class="menu-item hide">
-            <a href="https://pokemongolive.com/pt_br/" target="_blank">Site oficial do jogo</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-
-  <main class="main-content">
-    <section class="main-welcome">
-      <h1>Sejam bem-vindes,<br>Treinadores!</h1>
-      <h3>Saibam mais sobre os Pokémons!<br>Pokémon Guide funciona como um guia que pode ajudar a pesquisar os
-        tipos de Pokémons,<br> quais são os mais fortes, suas fraquezas e muito mais!</h3>
-    </section>
-    <section class="logo">
-      <img src="./styles/img/logo.png" alt="Logo da páginna">
-    </section>
-    <section class="button-initial">
-      <button>
-        <a href="./cardspage.html">Iniciar</a>
-      </button>
-    </section>
-  </main>
-
-  <footer class="footer-navigation">
-    <section class="footer-links">
-      <a href="./about.html">Sobre</a>
-      <a href="https://www.pokemon.com/br/" target="_blank">Site Pokémon</a>
-      <a href="https://pokemongolive.com/pt_br/" target="_blank">Site do jogo</a>
-    </section>
-
-    <section class="footer-buttonsDownload">
-      <button>
-        <a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" target="_blank">
-          <img src="./styles/img/googleplay-button.png" alt="Logo de Download Google Play">
+      </nav>
+    </header>
+  
+    <main class="main-content">
+      <section class="main-welcome">
+        <h1>Sejam bem-vindes,<br>Treinadores!</h1>
+        <h3>Saibam mais sobre os Pokémons!<br>Pokémon Guide funciona como um guia que pode ajudar a pesquisar os
+          tipos de Pokémons,<br> quais são os mais fortes, suas fraquezas e muito mais!</h3>
+      </section>
+      <section class="logo">
+        <img src="./styles/img/logo.png" alt="Logo da páginna">
+      </section>
+      <section class="button-initial">
+        <button>
+          <a href="./cardspage.html">Iniciar</a>
+        </button>
+      </section>
+    </main>
+  
+    <footer class="footer-navigation">
+      <section class="footer-links">
+        <a href="./about.html">Sobre</a>
+        <a href="https://www.pokemon.com/br/" target="_blank">Site Pokémon</a>
+        <a href="https://pokemongolive.com/pt_br/" target="_blank">Site do jogo</a>
+      </section>
+  
+      <section class="footer-buttonsDownload">
+        <button>
+          <a href="https://play.google.com/store/apps/details?id=com.nianticlabs.pokemongo" target="_blank">
+            <img src="./styles/img/googleplay-button.png" alt="Logo de Download Google Play">
+          </a>
+        </button>
+        <button>
+          <a href="https://apps.apple.com/vc/app/pok%C3%A9mon-go/id1094591345" target="_blank">
+            <img src="./styles/img/appstore-button.png" alt="Logo de Download App Store">
+          </a>
+        </button>
+      </section>
+  
+      <section class="footer-githubLink">
+        <a href="https://github.com/CassiaCosta" target="_blank">
+          <img src="./styles/img/GitHub-Emblem.png" alt="Logo GitHub">
         </a>
-      </button>
-      <button>
-        <a href="https://apps.apple.com/vc/app/pok%C3%A9mon-go/id1094591345" target="_blank">
-          <img src="./styles/img/appstore-button.png" alt="Logo de Download App Store">
-        </a>
-      </button>
-    </section>
-
-    <section class="footer-githubLink">
-      <a href="https://github.com/CassiaCosta" target="_blank">
-        <img src="./styles/img/GitHub-Emblem.png" alt="Logo GitHub">
-      </a>
-    </section>
-  </footer>
+      </section>
+    </footer>
+  </div>
 
   <script src="./js/main.js" type="module"></script>
   <script src="./js/settings.js" type="module"></script>

@@ -5,11 +5,15 @@
     border: 0;
 }
 
-html,
+.root {
+    height: 100vh;
+}
+
+/* html,
 body {
     height: 100%;
     width: 100%;
-}
+} */
 
 body {
     font-family: var(--default-font);
