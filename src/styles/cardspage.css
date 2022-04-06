@@ -12,90 +12,47 @@
 }
 
 /* ESTILIZAÇÃO DO HEADER */
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+}
+
 .nav-bar {
     background-color: var(--default-header-footer-color);
     height: 4.375rem;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    position: fixed;
-    z-index: 1;
 }
 
-/* ESTILIZAÇÃO DA LISTA DO MENU */
-.menu-list {
-    background-color: var(--default-transparent-header-color);
-    height: 60rem;
-    border-top: 0.1rem solid var(--default-footer-font-color);
-    border-bottom: 0.1rem solid var(--default-footer-font-color);
-    margin-top: 4.04rem;
-    right: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: absolute;
-    z-index: 2;
-}
-
-.menu-item {
-    list-style: none;
-    width: 90rem;
-    padding-top: 0.938rem;
-    padding-bottom: 0.938rem;
-}
-
-.menu-item:nth-child(1) a {
-    margin-left: 82.8rem;
-}
-
-.menu-item:nth-child(2) a {
-    margin-left: 86.55rem;
-}
-
-.menu-item:nth-child(3) a {
-    margin-left: 79.35rem;
-}
-
-.menu-item:nth-child(4) a {
-    margin-left: 79.9rem;
-}
-
-.nav-bar a {
-    text-decoration: none;
-    color: var(--default-primary-font-color);
-    font-size: 1.1rem;
-}
-
-.nav-bar a:hover {
-    color: var(--default-yellow);
+.button-logo {
+    background: none;
 }
 
 /* BARRA DE FILTRAR */
 .section-search {
-    font-size: 20px;
-    height: 60px;
+    font-size: 15px;
+    height: 85px;
     width: 100%;
-    top: 70px;
-    border-radius: 50px;
     background-color: var(--default-primary-font-color);
-    display: flex;
-    justify-content: space-evenly;
     align-items: center;
+    justify-items: center;
     position: fixed;
     z-index: 1;
+    display: grid;
+    grid-template-columns: auto auto auto;
 }
 
-.section-search.expanded {
-    z-index: -1;
+.section-search p {
+    display: none;
 }
 
 .section-search select,
 .section-search input,
 .section-search button {
-    font-size: 15px;
-    height: 40px;
-    width: 150px;
+    height: 30px;
+    width: 100px;
     text-align: center;
+    font-size: 12px;
 }
 
 .section-search button {
@@ -109,11 +66,12 @@
 }
 
 /* ESTILIZAÇÃO DO BACKGROUND */
-.main-content::before {
+body::before {
+    height: 100%;
     content: " ";
     background-image: url(../styles/img/background_sky.jpeg);
     background-size: cover;
-    top: 0px;
+    top: 0;
     right: 0px;
     bottom: 0px;
     left: 0px;
@@ -124,12 +82,10 @@
 
 /* BARRA DO CÁLCULO AGREGADO */
 .calculation-print {
-    font-size: 15px;
     background-color: var(--default-primary-font-color);
     height: 30px;
     width: 90%;
     border-radius: 50px;
-    top: 150px;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -137,29 +93,25 @@
     opacity: 0.7;
     position: relative;
     z-index: -1;
+    font-size: 13px;
+    top: 165px;
 }
 
 /* ESTILIZAÇÃO DOS CARDS */
 .pokemonList {
-    top: 160px;
+    top: 170px;
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto;
     justify-content: center;
     text-align: center;
     position: relative;
 }
 
-.hoverCards {
+.cards {
     color: var(--default-secondary-font-color);
+    margin: 8px;
     height: 255px;
     width: 170px;
-    margin: 8px;
-    transition: transform 2s;
-    transform-style: preserve-3d;
-}
-
-.allCards:hover .hoverCards {
-    transform: rotateY(180deg);
 }
 
 .front-cards,
@@ -168,8 +120,6 @@
     width: 100%;
     border-radius: 10px;
     display: grid;
-    position: absolute;
-    backface-visibility: hidden;
 }
 
 .front-cards {
@@ -223,6 +173,7 @@
     border-top: 2px solid var(--default-footer-font-color);
     padding: 10px 0 10px 0;
 }
+
 .heightPokemon {
     padding: 10px 0 10px 0;
 }
@@ -230,7 +181,7 @@
 /* BOTÃO TOP */
 .button-top {
     background: none;
-    right: 1.25rem;
+    right: 0;
     bottom: 1.25rem;
     margin-right: 1rem;
     position: fixed;
@@ -238,93 +189,51 @@
 }
 
 .button-top img {
-    height: 3.5rem;
+    height: 3rem;
 }
 
-@media screen and (max-width: 1000px) {
-    /* BARRA DE FILTRAR */
-    .section-search {
-        font-size: 16px;
-    }
-    .section-search select,
-    .section-search input,
-    .section-search button {
-        font-size: 13px;
-        height: 40px;
-        width: 120px;
-    }
-}
-
-@media screen and (max-width: 801px) {
-    /* BARRA DE FILTRAR */
-    .section-search p {
-        display: none;
-    }
-    .section-search select,
-    .section-search input,
-    .section-search button {
-        border-radius: 50px;
-    }
-    /* BARRA DO CÁLCULO AGREGADO */
-    .calculation-print {
-        font-size: 13px;
-    }
-    /* ESTILIZAÇÃO DOS CARDS */
-    .pokemonList {
-        grid-template-columns: auto auto auto;
-    }
-}
-
-@media screen and (max-width: 720px) {
-    /* BARRA DE FILTRAR */
-    .section-search {
-        height: 85px;
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
-    .section-search select,
-    .section-search input,
-    .section-search button {
-        font-size: 12px;
-        height: 30px;
-        width: 110px;
-    }
-    /* BARRA DO CÁLCULO AGREGADO */
-    .calculation-print {
-        top: 165px;
-    }
-    /* ESTILIZAÇÃO DOS CARDS */
+@media screen and (min-width: 500px) {
     .pokemonList {
         grid-template-columns: auto auto;
     }
-    .pokemonList {
-        top: 170px;
+}
+
+@media screen and (min-width: 768px) {
+    .section-search {
+        font-size: 15px;
+        border-radius: 50px;
     }
-    /* BOTÃO TOP */
+    .section-search select,
+    .section-search input,
+    .section-search button {
+        font-size: 15px;
+        width: 110px;
+    }
+    .pokemonList {
+        grid-template-columns: auto auto auto;
+    }
     .button-top {
-        right: 0;
+        right: 1.25rem;
+        bottom: 1.25rem;
+        margin-right: 1rem;
+    }
+    .button-top img {
+        height: 3.5rem;
     }
 }
 
-@media screen and (max-width: 475px) {
-    /* BARRA DE FILTRAR */
+@media screen and (min-width: 1024px) {
     .section-search {
-        font-size: 20px;
-        height: 85px;
-        border-radius: 0;
-        display: grid;
-        grid-template-columns: auto auto auto;
+        height: 60px;
+        display: flex;
+        justify-content: space-evenly;
     }
-    /* BARRA DO CÁLCULO AGREGADO */
     .calculation-print {
-        font-size: 13px;
-        top: 165px;
-    }
-    /* ESTILIZAÇÃO DOS CARDS */
-    .pokemonList {
-        grid-template-columns: auto;
+        font-size: 15px;
+        top: 150px;
     }
     .pokemonList {
-        top: 170px;
+        top: 160px;
+        grid-template-columns: auto auto auto auto;
     }
 }
