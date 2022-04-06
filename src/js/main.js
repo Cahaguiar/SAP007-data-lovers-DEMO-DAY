@@ -66,29 +66,21 @@ function translate(type) {
 
 function showPokemon(data) {
   const allCards = data.map((item) => `
-    <div class="allCards">
-        <div class="hoverCards">
-            <section class="front-cards" id="frontCards">
-                <p class="numberPokemon">${item.num}</p>
-                <picture>
-                    <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
-                </picture>
-                <div class="info-cards">
-                    <p class="namePokemon">${item.name}</p>
-                    <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
-                      return translate(element)
-                    })}</p>
-                    <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
-                </div>
-            </section>
-            <section class="back-cards" id="backCards">
-                <p class="heightPokemon"> <b> Altura:</b> ${item.size["height"]}</p>
-                <p class="weightPokemon"> <b> Peso: </b> ${item.size["weight"]}</p>
-                <p class="rarityPokemon"> <b>Raridade:</b> ${item["pokemon-rarity"]}</p>
-                <p class="specialAttackPokemon"> <b>Ataque especial:</b> <br> ${item["special-attack"][0].name}</p>
-            </section>
-        </div>
-    </div>
+      <div class="cards">
+          <section class="front-cards" id="frontCards">
+              <p class="numberPokemon">${item.num}</p>
+              <picture>
+                  <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
+              </picture>
+              <div class="info-cards">
+                  <p class="namePokemon">${item.name}</p>
+                  <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+                    return translate(element)
+                  })}</p>
+                  <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
+              </div>
+          </section>
+      </div>
     `).join('')
     document.getElementById('pokemonList').innerHTML = allCards;
 }
