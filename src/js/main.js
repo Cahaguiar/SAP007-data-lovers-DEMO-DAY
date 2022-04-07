@@ -78,9 +78,6 @@ function showPokemon(data) {
               <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
                 return translate(element)
               })}</p>
-              <p class="typePokemon"> <b>Resistências:</b> ${item.resistant.map(element => {
-                return translate(element)
-              })}</p>
               <p class="typePokemon"><b>Ovos:</b>${item.egg}</p>
           </div>
         </section>
@@ -103,9 +100,6 @@ function showPokemonShiny(data) {
               return translate(element)
               })}
             </p>
-            <p class="typePokemon"> <b>Resistências:</b> ${item.resistant.map(element => {
-              return translate(element)
-            })}</p>
             <p class="typePokemon"><b>Ovos:</b>${item.egg}</p>
           </div>
         </section>
@@ -134,7 +128,7 @@ function searchByRarity(e) {
 
 function searchByEgg(e) {
   allPokemons = eggsFilter(allPokemons, e.target.value)
-  calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons pertencem a esta região`
+  calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons podem surgir desses ovos`
   showPokemon(allPokemons)
 }
 

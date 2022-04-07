@@ -53,6 +53,7 @@ header {
     width: 100px;
     text-align: center;
     font-size: 12px;
+    background: none;
 }
 
 .form-search button {
@@ -100,7 +101,7 @@ body::before {
 /* ESTILIZAÇÃO DOS CARDS */
 .pokemonList {
     top: 170px;
-    /* width: 100%; */
+    width: 100%;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
@@ -111,8 +112,8 @@ body::before {
 .cards {
     color: var(--default-secondary-font-color);
     margin: 8px;
-    height: 300px;
-    width: 200px;
+    height: 310px;
+    width: 210px;
 }
 
 .front-cards,
@@ -144,7 +145,7 @@ body::before {
 }
 
 .info-cards {
-    width: 200px;
+    width: 210px;
     background-color: var(--default-primary-font-color);
     border-radius: 0 0 10px 10px;
 }
@@ -154,21 +155,6 @@ body::before {
     font-size: 15px;
     border-top: 2px solid var(--default-footer-font-color);
     padding: 3px;
-}
-
-.regionPokemon {
-    margin-bottom: 5px;
-}
-
-.weightPokemon,
-.rarityPokemon,
-.specialAttackPokemon {
-    border-top: 2px solid var(--default-footer-font-color);
-    padding: 10px 0 10px 0;
-}
-
-.heightPokemon {
-    padding: 10px 0 10px 0;
 }
 
 /* BOTÃO TOP */
@@ -207,7 +193,7 @@ body::before {
 
 @media screen and (min-width: 500px) {
     .pokemonList {
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
     }
 }
 
@@ -223,7 +209,7 @@ body::before {
         width: 110px;
     }
     .pokemonList {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
     }
     .button-top {
         right: 1.25rem;
