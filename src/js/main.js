@@ -68,43 +68,21 @@ function showPokemon(data) {
   const allCards = data.map((item) => `
       <div class="cards" id="cards">
           <section class="front-cards" id="frontCards">
-              <p class="numberPokemon">${item.num}</p>
-              <picture>
-                  <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
-              </picture>
-              <div class="info-cards">
-                  <p class="namePokemon">${item.name}</p>
-                  <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
-                    return translate(element)
-                  })}</p>
-                  <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
-              </div>
+            <p class="numberPokemon">${item.num}</p>
+            <picture>
+                <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
+            </picture>
+            <div class="info-cards">
+                <p class="namePokemon">${item.name}</p>
+                <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+                  return translate(element)
+                })}</p>
+            </div>
           </section>
       </div>
     `).join('')
     document.getElementById('pokemonList').innerHTML = allCards;
 }
-
-// function showPokemonShiny(data) {
-//   const allCards = data.map((item) => `
-//       <div class="cardsShiny">
-//           <section class="front-cardsShiny" id="frontCardsShiny">
-//               <p class="numberPokemonShiny">${item.num}</p>
-//               <picture>
-//                   <img class="image-cardShiny" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
-//               </picture>
-//               <div class="info-cardsShiny">
-//                   <p class="namePokemonShiny">${item.name}</p>
-//                   <p class="typePokemonShiny"> <b>Tipo:</b> ${item.type.map(element => {
-//                     return translate(element)
-//                   })}</p>
-//                   <p class="regionPokemonShiny"> <b>Região:</b> ${item.generation["name"]}</p>
-//               </div>
-//           </section>
-//       </div>
-//     `).join('')
-//     document.getElementById('pokemonList').innerHTML = allCards;
-// }
 
 function searchByType(e) {
   allPokemons = typeFilter(allPokemons, e.target.value)
