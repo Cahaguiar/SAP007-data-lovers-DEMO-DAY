@@ -1,0 +1,30 @@
+/* CONFIGURAÇÃO GERAL */
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: var(--default-font);
+    background-color: var(--default-background-color);
+}
+
+.root {
+    height: 100%;
+}
+
+
+/* ESTILIZAÇÃO DO HEADER */
+header {
+    height: 4.5rem;
+    background-color: var(--default-transparent-header-color);
+}
+
+.nav-bar-img {
+    height: 5rem;
+    margin-top: 0.188rem;
+    margin-left: 0.6rem;
+    align-self: flex-start;
+}
