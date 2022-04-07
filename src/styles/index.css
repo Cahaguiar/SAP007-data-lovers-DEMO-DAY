@@ -77,22 +77,24 @@ body::before {
 
 /* ESTILIZAÇÃO DO FOOTER */
 .footer-navigation {
-    font-size: 0.8rem;
+    color: var(--default-footer-font-color);
     background-color: var(--default-header-footer-color);
     height: 6.2rem;
     width: 100%;
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    text-align: center;
+    line-height: 1.5rem;
 }
 
-.footer-links {
-    display: grid;
-    line-height: 1rem;
+.footer-navigation p {
+    font-size: 0.8rem;
 }
 
-.footer-links a {
-    text-decoration: none;
+.footer-navigation a {
+    text-decoration: underline;
     color: var(--default-footer-font-color);
 }
 
