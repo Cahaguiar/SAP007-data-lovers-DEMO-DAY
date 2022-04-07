@@ -2,6 +2,7 @@ import { alphabeticalFilter, calculos, rarityFilter, regionFilter, searchName, s
 import data from '../data/pokemon/pokemon.js';
 
 const allPokemons = data.pokemon;
+const shinyUrlImg = "https://www.serebii.net/pokemongo/pokemon/shiny/";
 
 let selectType = document.getElementById('typeFilter');
 let selectRarity = document.getElementById('rarityFilter');
@@ -66,24 +67,49 @@ function translate(type) {
 
 function showPokemon(data) {
   const allCards = data.map((item) => `
-      <div class="cards">
-          <section class="front-cards" id="frontCards">
-              <p class="numberPokemon">${item.num}</p>
-              <picture>
-                  <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
-              </picture>
-              <div class="info-cards">
-                  <p class="namePokemon">${item.name}</p>
-                  <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
-                    return translate(element)
-                  })}</p>
-                  <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
-              </div>
-          </section>
-      </div>
-    `).join('')
+    <div class="cards">
+      <section class="front-cards" id="frontCards">
+        <p class="numberPokemon">${item.num}</p>
+        <picture>
+          <img class="image-card" src="${item.img}" alt="imagem do Pokémon" loading = "lazy">
+        </picture>
+        <div class="info-cards">
+          <p class="namePokemon">${item.name}</p>
+          <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+            return translate(element)
+            })}
+          </p>
+          <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
+        </div>
+      </section>
+    </div>
+  `).join('')
     document.getElementById('pokemonList').innerHTML = allCards;
 }
+
+function showPokemonShiny(data) {
+  const allCards = data.map((item) => `
+    <div class="cards">
+      <section class="front-cards" id="frontCards">
+        <p class="numberPokemon">${item.num}</p>
+        <picture>
+          <img class="image-card" src="${shinyUrlImg}${item.img.slice(42,50)}" alt="imagem do Pokémon" loading = "lazy">
+        </picture>
+        <div class="info-cards">
+          <p class="namePokemon">${item.name}</p>
+          <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+            return translate(element)
+            })}
+          </p>
+          <p class="regionPokemon"> <b>Região:</b> ${item.generation["name"]}</p>
+        </div>
+      </section>
+    </div>
+  `).join('')
+    document.getElementById('pokemonList').innerHTML = allCards;
+}
+
+
 
 function searchByType(e) {
   const resultEspecie = typeFilter(allPokemons, e.target.value)
@@ -93,10 +119,15 @@ function searchByType(e) {
 }
 
 function searchByRarity(e) {
-  const resultRarity = rarityFilter(allPokemons, e.target.value)
-  calculationBar.innerHTML = `Esta raridade de pokémon representa ${calculos(allPokemons.length, resultRarity.length)}% 
+  if (e.target.value == "shiny") {
+    return showPokemonShiny(allPokemons)
+  } else {
+    const resultRarity = rarityFilter(allPokemons, e.target.value)
+    calculationBar.innerHTML = `Esta raridade de pokémon representa ${calculos(allPokemons.length, resultRarity.length)}% 
         do total`
   return showPokemon(resultRarity)
+  }
+  
 }
 
 function searchByRegion(e) {
