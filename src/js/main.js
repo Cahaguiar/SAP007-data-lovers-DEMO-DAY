@@ -1,17 +1,17 @@
-import { alphabeticalFilter, calculos, rarityFilter, regionFilter, searchName, sizeFilter, typeFilter } from './data.js';
+import { calculos, rarityFilter, eggsFilter, typeFilter, alphabeticalFilter, searchName } from './data.js';
 import data from '../data/pokemon/pokemon.js';
 
-const allPokemons = data.pokemon;
+let allPokemons = data.pokemon;
 const shinyUrlImg = "https://www.serebii.net/pokemongo/pokemon/shiny/";
 
-let selectType = document.getElementById('typeFilter');
-let selectRarity = document.getElementById('rarityFilter');
-let selectRegion = document.getElementById('regionFilter');
-let selectOrder = document.getElementById('orderFilter');
-let inputName = document.getElementById('nameFilter');
-let clearButton = document.getElementById('clearButton');
-let calculationBar = document.getElementById('calculation');
-let buttonTop = document.getElementById('buttonTop');
+const selectType = document.getElementById('typeFilter');
+const selectRarity = document.getElementById('rarityFilter');
+const selectEggs = document.getElementById('eggsFilter');
+const selectOrder = document.getElementById('orderFilter');
+const inputName = document.getElementById('nameFilter');
+const clearButton = document.getElementById('clearButton');
+const calculationBar = document.getElementById('calculation');
+const buttonTop = document.getElementById('buttonTop');
 
 function translate(type) {
   let translatedType = "";
@@ -110,12 +110,11 @@ function showPokemonShiny(data) {
 }
 
 
-
 function searchByType(e) {
-  const resultEspecie = typeFilter(allPokemons, e.target.value)
-  calculationBar.innerHTML = `Este tipo de pokémon representa ${calculos(allPokemons.length, resultEspecie.length)}% 
+  allPokemons = typeFilter(allPokemons, e.target.value)
+  calculationBar.innerHTML = `Este tipo de pokémon representa ${calculos(data.pokemon.length, allPokemons.length)}% 
         do total`
-  return showPokemon(resultEspecie)
+  showPokemon(allPokemons)
 }
 
 function searchByRarity(e) {
@@ -125,45 +124,24 @@ function searchByRarity(e) {
     const resultRarity = rarityFilter(allPokemons, e.target.value)
     calculationBar.innerHTML = `Esta raridade de pokémon representa ${calculos(allPokemons.length, resultRarity.length)}% 
         do total`
-  return showPokemon(resultRarity)
+  showPokemon(resultRarity)
   }
   
 }
 
-function searchByRegion(e) {
-  const resultRegion = regionFilter(allPokemons, e.target.value)
-  calculationBar.innerHTML = `${calculos(allPokemons.length, resultRegion.length)}% dos Pokémons pertencem a esta região`
-  return showPokemon(resultRegion)
+function searchByEgg(e) {
+  allPokemons = eggsFilter(allPokemons, e.target.value)
+  calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons pertencem a esta região`
+  showPokemon(allPokemons)
 }
 
 function searchByOrderAlphabetical() {
   if (selectOrder.value == "a-z") {
     calculationBar.innerHTML = `Pokémons ordenados de A à Z`
-    return showPokemon(alphabeticalFilter(allPokemons, selectOrder.value))
   } else if (selectOrder.value == "z-a") {
     calculationBar.innerHTML = `Pokémons ordenados de Z à A`
-    return showPokemon(alphabeticalFilter(allPokemons, selectOrder.value))
   }
-}
-
-function searchByHeightOrder() {
-  if (selectOrder.value == "shortHigh") {
-    calculationBar.innerHTML = `Pokémons ordenados do mais baixo para o mais alto`
-    return showPokemon(sizeFilter(allPokemons, "height", selectOrder.value))
-  } else if (selectOrder.value == "highShort") {
-    calculationBar.innerHTML = `Pokémons ordenados do mais alto para o mais baixo`
-    return showPokemon(sizeFilter(allPokemons, "height", selectOrder.value))
-  }
-}
-
-function searchByWeightOrder() {
-  if (selectOrder.value == "lightHeavy") {
-    calculationBar.innerHTML = `Pokémons ordenados do mais leve para o mais pesado`
-    return showPokemon(sizeFilter(allPokemons, "weight", selectOrder.value))
-  } else if (selectOrder.value == "heavyLight") {
-    calculationBar.innerHTML = `Pokémons ordenados do mais pesado para o mais leve`
-    return showPokemon(sizeFilter(allPokemons, "weight", selectOrder.value))
-  }
+  showPokemon(alphabeticalFilter(allPokemons, selectOrder.value))
 }
 
 function searchByName() {
@@ -172,16 +150,12 @@ function searchByName() {
   } else if (inputName.value == "") {
     calculationBar.innerHTML = `Você está vendo todos os Pokémons!`
   }
-  return showPokemon(searchName(allPokemons, inputName.value.toLowerCase()))
+  showPokemon(searchName(allPokemons, inputName.value.toLowerCase()))
 }
 
 function cleanFilters() {
+  allPokemons = data.pokemon;
   showPokemon(allPokemons);
-  selectType.value = "";
-  selectRarity.value = "";
-  selectRegion.value = "";
-  selectOrder.value = "";
-  inputName.value = "";
   calculationBar.innerHTML = `Você está vendo todos os Pokémons!`
 }
 
@@ -192,10 +166,8 @@ function scrollToTop() {
 showPokemon(allPokemons);
 selectType.addEventListener('change', searchByType);
 selectRarity.addEventListener('change', searchByRarity);
-selectRegion.addEventListener('change', searchByRegion);
+selectEggs.addEventListener('change', searchByEgg);
 selectOrder.addEventListener('change', searchByOrderAlphabetical);
-selectOrder.addEventListener('change', searchByHeightOrder);
-selectOrder.addEventListener('change', searchByWeightOrder);
 inputName.addEventListener('input', searchByName);
 clearButton.addEventListener('click', cleanFilters);
 buttonTop.addEventListener('click', scrollToTop)

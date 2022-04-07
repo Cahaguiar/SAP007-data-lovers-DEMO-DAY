@@ -8,9 +8,10 @@ export const rarityFilter = (data, rarity) => {
     return filteredRarity
 }
 
-export const regionFilter = (data, region) => {
-    const filteredRegion = data.filter(pokemonRegion => pokemonRegion.generation["name"] == region)
-    return filteredRegion
+export const eggsFilter = (data, egg) => {
+    const filteredEggs = data.filter(pokemonEggs => pokemonEggs.egg == egg)
+    console.log(filteredEggs)
+    return filteredEggs
 }
 
 export const alphabeticalFilter = (data, chosenOrder) => {
@@ -25,26 +26,12 @@ export const alphabeticalFilter = (data, chosenOrder) => {
     }
 }
 
-export const sizeFilter = (data, key, chosenOrder) => {
-    const dataCopy = [...data]
-    const orderByHeight = dataCopy.sort((a, b) => {
-        const aSize = Number(a.size[key].replaceAll(/[a-z]/g, '').trim())
-        const bSize = Number(b.size[key].replaceAll(/[a-z]/g, '').trim())
-        return (aSize - bSize)
-    })
-    if(chosenOrder === "shortHigh" || chosenOrder === "lightHeavy") {
-        return orderByHeight
-    } else {
-        return orderByHeight.reverse()
-    }
-}
-
 export const searchName = (data, name) => {
     const filterName = data.filter(pokemonName => pokemonName.name.includes(name))
     return filterName
 }
 
 export const calculos = (total, portion) => {
-    const porcentagem = Math.round((portion * 100) / total)
+    const porcentagem = ((portion * 100) / total).toFixed(2)
     return porcentagem
 };

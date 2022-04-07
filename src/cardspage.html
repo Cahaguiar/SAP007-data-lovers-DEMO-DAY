@@ -19,7 +19,7 @@
                 </a>
             </button>
         </nav>
-        <section class="section-search">
+        <form class="form-search">
             <p>Buscar por: </p>
             <select id="typeFilter">
                 <option value disabled selected>Tipo</option>
@@ -46,23 +46,22 @@
                 <option value="normal">Normal</option>
                 <option value="shiny">Shiny</option>
             </select>
-            <select id="regionFilter">
-                <option value disabled selected>Região de origem</option>
-                <option value="johto">Johto</option>
-                <option value="kanto">Kanto</option>
+            <select id="eggsFilter">
+                <option value disabled selected>Ovos</option>
+                <option value="not in eggs">Não tem ovos</option>
+                <option value="2 km">2Km</option>
+                <option value="5 km">5Km</option>
+                <option value="7 km">7Km</option>
+                <option value="10 km">10Km</option>
             </select>
             <select id="orderFilter">
                 <option value disabled selected>Ordenar</option>
                 <option value="a-z">A - Z</option>
                 <option value="z-a">Z - A</option>
-                <option value="shortHigh">Baixo - Alto</option>
-                <option value="highShort">Alto - Baixo</option>
-                <option value="lightHeavy">Leve - Pesado</option>
-                <option value="heavyLight">Pesado - Leve</option>
             </select>
             <input type="text" placeholder="Nome do Pokémon" id="nameFilter">
             <button type="reset" id="clearButton">Limpar</button>
-        </section>
+        </form>
     </header>
 
     <main class="main-content">

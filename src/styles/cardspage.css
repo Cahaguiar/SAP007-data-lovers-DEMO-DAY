@@ -29,7 +29,7 @@ header {
 }
 
 /* BARRA DE FILTRAR */
-.section-search {
+.form-search {
     font-size: 15px;
     height: 85px;
     width: 100%;
@@ -42,26 +42,26 @@ header {
     grid-template-columns: auto auto auto;
 }
 
-.section-search p {
+.form-search p {
     display: none;
 }
 
-.section-search select,
-.section-search input,
-.section-search button {
+.form-search select,
+.form-search input,
+.form-search button {
     height: 30px;
     width: 100px;
     text-align: center;
     font-size: 12px;
 }
 
-.section-search button {
+.form-search button {
     color: var(--default-primary-font-color);
     border-radius: 50px;
     background-color: var(--default-header-footer-color);
 }
 
-.section-search button:hover {
+.form-search button:hover {
     background-color: var(--default-button-hover-color);
 }
 
@@ -192,6 +192,26 @@ body::before {
     height: 3rem;
 }
 
+/* ESTILIZAÇÃO VERSÃO SHINY */
+/* body::before {
+    height: 100%;
+    content: " ";
+    background-image: url(../styles/img/background-shiny.jpg);
+    background-size: cover;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+    position: fixed;
+    z-index: -1;
+}
+.front-cards {
+    background-color: #c79d33;
+    align-content: space-between;
+    text-align: center;
+} */
+
 @media screen and (min-width: 500px) {
     .pokemonList {
         grid-template-columns: auto auto;
@@ -199,13 +219,13 @@ body::before {
 }
 
 @media screen and (min-width: 768px) {
-    .section-search {
+    .form-search {
         font-size: 15px;
         border-radius: 50px;
     }
-    .section-search select,
-    .section-search input,
-    .section-search button {
+    .form-search select,
+    .form-search input,
+    .form-search button {
         font-size: 15px;
         width: 110px;
     }
@@ -223,7 +243,7 @@ body::before {
 }
 
 @media screen and (min-width: 1024px) {
-    .section-search {
+    .form-search {
         height: 60px;
         display: flex;
         justify-content: space-evenly;
