@@ -32,6 +32,6 @@ export const searchName = (data, name) => {
 }
 
 export const calculos = (total, portion) => {
-    const porcentagem = Math.round((portion * 100) / total)
+    const porcentagem = ((portion * 100) / total).toFixed(2)
     return porcentagem
 };
