@@ -31,7 +31,7 @@ header {
 /* BARRA DE FILTRAR */
 .form-search {
     font-size: 15px;
-    height: 85px;
+    height: 80px;
     width: 100%;
     background-color: var(--default-primary-font-color);
     align-items: center;
@@ -100,6 +100,7 @@ body::before {
 /* ESTILIZAÇÃO DOS CARDS */
 .pokemonList {
     top: 170px;
+    /* width: 100%; */
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
@@ -110,12 +111,12 @@ body::before {
 .cards {
     color: var(--default-secondary-font-color);
     margin: 8px;
-    height: 255px;
-    width: 170px;
+    height: 300px;
+    width: 200px;
 }
 
 .front-cards,
-.back-cards {
+.front-cards-shiny {
     height: 100%;
     width: 100%;
     border-radius: 10px;
@@ -143,6 +144,7 @@ body::before {
 }
 
 .info-cards {
+    width: 200px;
     background-color: var(--default-primary-font-color);
     border-radius: 0 0 10px 10px;
 }
@@ -156,15 +158,6 @@ body::before {
 
 .regionPokemon {
     margin-bottom: 5px;
-}
-
-.back-cards {
-    font-size: 15px;
-    background-color: var(--default-primary-font-color);
-    align-items: center;
-    align-content: center;
-    display: grid;
-    transform: rotateY(180deg);
 }
 
 .weightPokemon,
@@ -193,7 +186,7 @@ body::before {
 }
 
 /* ESTILIZAÇÃO VERSÃO SHINY */
-/* body::before {
+/* .background-shiny::before {
     height: 100%;
     content: " ";
     background-image: url(../styles/img/background-shiny.jpg);
@@ -202,15 +195,15 @@ body::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.4;
+    opacity: 0.9;
     position: fixed;
     z-index: -1;
-}
-.front-cards {
+} */
+.front-cards-shiny {
     background-color: #c79d33;
     align-content: space-between;
     text-align: center;
-} */
+}
 
 @media screen and (min-width: 500px) {
     .pokemonList {
