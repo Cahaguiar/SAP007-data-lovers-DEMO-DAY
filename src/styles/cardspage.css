@@ -192,6 +192,26 @@ body::before {
     height: 3rem;
 }
 
+/* ESTILIZAÇÃO VERSÃO SHINY */
+/* body::before {
+    height: 100%;
+    content: " ";
+    background-image: url(../styles/img/background-shiny.jpg);
+    background-size: cover;
+    top: 0;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.4;
+    position: fixed;
+    z-index: -1;
+}
+.front-cards {
+    background-color: #c79d33;
+    align-content: space-between;
+    text-align: center;
+} */
+
 @media screen and (min-width: 500px) {
     .pokemonList {
         grid-template-columns: auto auto;
