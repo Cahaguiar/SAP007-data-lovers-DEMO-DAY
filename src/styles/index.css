@@ -94,7 +94,7 @@ body::before {
 }
 
 .footer-navigation a {
-    text-decoration: underline;
+    text-decoration: none;
     color: var(--default-footer-font-color);
 }
 
