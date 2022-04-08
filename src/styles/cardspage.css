@@ -183,7 +183,7 @@ body.shiny::before {
     right: 0px;
     bottom: 0px;
     left: 0px;
-    opacity: 0.9;
+    opacity: 0.5;
     position: fixed;
     z-index: -1;
 }
