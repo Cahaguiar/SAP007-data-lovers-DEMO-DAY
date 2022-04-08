@@ -146,6 +146,7 @@ function showPokemonShiny(data) {
 }
 
 function searchByType(e) {
+  document.body.classList.remove('shiny')
   allPokemons = typeFilter(allPokemons, e.target.value)
   calculationBar.innerHTML = `Este tipo de pokémon representa ${calculos(data.pokemon.length, allPokemons.length)}% 
         do total`
@@ -166,12 +167,14 @@ function searchByRarity(e) {
 }
 
 function searchByEgg(e) {
+  document.body.classList.remove('shiny')
   allPokemons = eggsFilter(allPokemons, e.target.value)
   calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons podem surgir desses ovos`
   showPokemon(allPokemons)
 }
 
 function searchByOrderAlphabetical() {
+  document.body.classList.remove('shiny')
   if (selectOrder.value == "a-z") {
     calculationBar.innerHTML = `Pokémons ordenados de A à Z`
   } else if (selectOrder.value == "z-a") {
@@ -181,6 +184,7 @@ function searchByOrderAlphabetical() {
 }
 
 function searchByName() {
+  document.body.classList.remove('shiny')
   if (inputName.value !== "") {
     calculationBar.innerHTML = `Busca por nome...`
   } else if (inputName.value == "") {
