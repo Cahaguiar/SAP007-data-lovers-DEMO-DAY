@@ -53,6 +53,7 @@ header {
     width: 100px;
     text-align: center;
     font-size: 12px;
+    background: none;
 }
 
 .form-search button {
@@ -100,7 +101,7 @@ body::before {
 /* ESTILIZAÇÃO DOS CARDS */
 .pokemonList {
     top: 170px;
-    /* width: 100%; */
+    width: 100%;
     display: grid;
     grid-template-columns: auto;
     justify-content: center;
@@ -111,8 +112,8 @@ body::before {
 .cards {
     color: var(--default-secondary-font-color);
     margin: 8px;
-    height: 300px;
-    width: 200px;
+    height: 310px;
+    width: 210px;
 }
 
 .front-cards,
@@ -123,7 +124,8 @@ body::before {
     display: grid;
 }
 
-.front-cards {
+.front-cards,
+.front-cards-shiny {
     background-color: var(--default-yellow);
     align-content: space-between;
     text-align: center;
@@ -144,31 +146,17 @@ body::before {
 }
 
 .info-cards {
-    width: 200px;
+    width: 210px;
     background-color: var(--default-primary-font-color);
     border-radius: 0 0 10px 10px;
 }
 
-.typePokemon,
-.regionPokemon {
+.info {
     font-size: 15px;
     border-top: 2px solid var(--default-footer-font-color);
     padding: 3px;
-}
-
-.regionPokemon {
-    margin-bottom: 5px;
-}
-
-.weightPokemon,
-.rarityPokemon,
-.specialAttackPokemon {
-    border-top: 2px solid var(--default-footer-font-color);
-    padding: 10px 0 10px 0;
-}
-
-.heightPokemon {
-    padding: 10px 0 10px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
 }
 
 /* BOTÃO TOP */
@@ -186,7 +174,7 @@ body::before {
 }
 
 /* ESTILIZAÇÃO VERSÃO SHINY */
-/* .background-shiny::before {
+body.shiny::before {
     height: 100%;
     content: " ";
     background-image: url(../styles/img/background-shiny.jpg);
@@ -198,7 +186,8 @@ body::before {
     opacity: 0.9;
     position: fixed;
     z-index: -1;
-} */
+}
+
 .front-cards-shiny {
     background-color: #c79d33;
     align-content: space-between;
@@ -207,7 +196,7 @@ body::before {
 
 @media screen and (min-width: 500px) {
     .pokemonList {
-        grid-template-columns: auto auto;
+        grid-template-columns: auto;
     }
 }
 
@@ -216,20 +205,24 @@ body::before {
         font-size: 15px;
         border-radius: 50px;
     }
+
     .form-search select,
     .form-search input,
     .form-search button {
         font-size: 15px;
         width: 110px;
     }
+
     .pokemonList {
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
     }
+
     .button-top {
         right: 1.25rem;
         bottom: 1.25rem;
         margin-right: 1rem;
     }
+
     .button-top img {
         height: 3.5rem;
     }
@@ -241,10 +234,12 @@ body::before {
         display: flex;
         justify-content: space-evenly;
     }
+
     .calculation-print {
         font-size: 15px;
         top: 150px;
     }
+
     .pokemonList {
         top: 160px;
         grid-template-columns: auto auto auto auto;

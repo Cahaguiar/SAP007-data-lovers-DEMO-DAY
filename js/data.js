@@ -10,7 +10,6 @@ export const rarityFilter = (data, rarity) => {
 
 export const eggsFilter = (data, egg) => {
     const filteredEggs = data.filter(pokemonEggs => pokemonEggs.egg == egg)
-    console.log(filteredEggs)
     return filteredEggs
 }
 

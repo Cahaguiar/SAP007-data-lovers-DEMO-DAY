@@ -66,7 +66,24 @@ function translate(type) {
 }
 
 function showPokemon(data) {
-  const allCards = data.map((item) => `
+  const allCards = data.map((item) => {
+    let evolutionText = "";
+    let candysEvolution = "";
+    let eggs = "";
+    if (item.evolution["next-evolution"]) {
+      // evolutionText = item.evolution["next-evolution"][0].name
+      evolutionText = `<p class="info"><b>Próxima evolução:</b> ${item.evolution["next-evolution"].map(evolution => evolution.name).join(', ')}</p>`
+      candysEvolution = `<p class="info"><b>Candys:</b> ${item.evolution["next-evolution"].map(candys => candys["candy-cost"]).join(', ')}</p>`
+    } else {
+      evolutionText = `<p class="info"><b>Não tem próxima evolução</b></p>`
+      candysEvolution = `<p class="info">Sem candys</p>`
+    }
+    if (item.egg == "not in eggs") {
+      eggs = `<p class="info"><b>Ovos:</b> Não tem ovos</p>`
+    } else {
+      eggs = `<p class="info"><b>Ovos:</b>${item.egg}</p>`
+    }
+    return `
     <div class="cards" id="cards">
         <section class="front-cards" id="frontCards">
           <p class="numberPokemon">${item.num}</p>
@@ -75,22 +92,38 @@ function showPokemon(data) {
           </picture>
           <div class="info-cards">
               <p class="namePokemon">${item.name}</p>
-              <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+              <p class="info"> <b>Tipo:</b> ${item.type.map(element => {
                 return translate(element)
               })}</p>
-              <p class="typePokemon"> <b>Resistências:</b> ${item.resistant.map(element => {
-                return translate(element)
-              })}</p>
-              <p class="typePokemon"><b>Ovos:</b>${item.egg}</p>
+              ${eggs}
+              ${evolutionText}
+              ${candysEvolution}
           </div>
         </section>
     </div>
-    `).join('')
+    `}).join('')
     document.getElementById('pokemonList').innerHTML = allCards;
 }
 
 function showPokemonShiny(data) {
-  const allCards = data.map((item) => `
+  const allCards = data.map((item) => {
+    let evolutionText = "";
+    let candysEvolution = "";
+    let eggs = "";
+    if (item.evolution["next-evolution"]) {
+      // evolutionText = item.evolution["next-evolution"][0].name
+      evolutionText = `<p class="info"><b>Próxima evolução:</b> ${item.evolution["next-evolution"].map(evolution => evolution.name).join(', ')}</p>`
+      candysEvolution = `<p class="info"><b>Candys:</b> ${item.evolution["next-evolution"].map(candys => candys["candy-cost"]).join(', ')}</p>`
+    } else {
+      evolutionText = `<p class="info"><b>Não tem próxima evolução</b></p>`
+      candysEvolution = `<p class="info">Sem candys</p>`
+    }
+    if (item.egg == "not in eggs") {
+      eggs = `<p class="info"><b>Ovos:</b> Não tem ovos</p>`
+    } else {
+      eggs = `<p class="info"><b>Ovos:</b>${item.egg}</p>`
+    }
+    return `
       <div class="cards">
         <section class="front-cards-shiny" id="frontCards">
           <p class="numberPokemon">${item.num}</p>
@@ -99,18 +132,16 @@ function showPokemonShiny(data) {
           </picture>
           <div class="info-cards">
             <p class="namePokemon">${item.name}</p>
-            <p class="typePokemon"> <b>Tipo:</b> ${item.type.map(element => {
+            <p class="info"> <b>Tipo:</b> ${item.type.map(element => {
               return translate(element)
-              })}
-            </p>
-            <p class="typePokemon"> <b>Resistências:</b> ${item.resistant.map(element => {
-              return translate(element)
-            })}</p>
-            <p class="typePokemon"><b>Ovos:</b>${item.egg}</p>
+              })}</p>
+            ${eggs}
+            ${evolutionText}
+            ${candysEvolution}
           </div>
         </section>
       </div>
-  `).join('')
+  `}).join('')
     document.getElementById('pokemonList').innerHTML = allCards;
 }
 
@@ -123,8 +154,10 @@ function searchByType(e) {
 
 function searchByRarity(e) {
   if (e.target.value == "shiny") {
-    return showPokemonShiny(allPokemons)
+    document.body.classList.add('shiny')
+    showPokemonShiny(allPokemons)
   } else {
+    document.body.classList.remove('shiny')
     const resultRarity = rarityFilter(allPokemons, e.target.value)
     calculationBar.innerHTML = `Esta raridade de pokémon representa ${calculos(allPokemons.length, resultRarity.length)}% 
         do total`
@@ -134,7 +167,7 @@ function searchByRarity(e) {
 
 function searchByEgg(e) {
   allPokemons = eggsFilter(allPokemons, e.target.value)
-  calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons pertencem a esta região`
+  calculationBar.innerHTML = `${calculos(data.pokemon.length, allPokemons.length)}% dos Pokémons podem surgir desses ovos`
   showPokemon(allPokemons)
 }
 
@@ -157,6 +190,7 @@ function searchByName() {
 }
 
 function cleanFilters() {
+  document.body.classList.remove('shiny')
   allPokemons = data.pokemon;
   showPokemon(allPokemons);
   calculationBar.innerHTML = `Você está vendo todos os Pokémons!`
