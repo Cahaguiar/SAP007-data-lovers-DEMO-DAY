@@ -1,78 +1,60 @@
-# Pokémon Guide
+<h4 align="center"> 
 
 ![logo](/src/styles/img/logo.png)
 
-Um guia desenvolvido para jogadores do Pokemon GO, a fim de facilitar sua jogabilidade.
+# Pokémon Guide
 
+**Um guia desenvolvido para jogadores do Pokemon GO, a fim de facilitar sua jogabilidade.**
+</h4>
+
+:book:
+:open_book:
 ## Índice 
- 
-- [1. Pokémon GO](#1-pokémon GO)
-- [2. Definição do Produto](#2-definição do produto)
-- [3. O problema vs A solução](#3-o-problema-vs-a-solução)
-- [4. Usuários](#4-usuários)
+- [1. Pokémon GO](#1-Pokemon-GO)
+- [2. Definição do Produto](#2-Definição-de-Produto)
+- [3. Pesquisa com Usuários](#4-Pesquisa-com-usuários)
+- [4. O problema vs A solução](#3-o-problema-vs-a-solução)
 - [5. Protótipos](#5-protótipos)
-- [6. Testes de Usabilidade](#6-testes-de-usabilidade)
-- [7. Sobre as desenvolvedoras](#7-sobre-as-desenvolvedoras)
-- [8. Linguagens utilizadas](#8-linguagens-utilizadas)
+- [6. Teste de Usabilidade](#6-teste-de-usabilidade)
+- [7. Produto Final](#7-produto-final)
+- [8. Sobre as desenvolvedoras](#8-sobre-as-desenvolvedoras)
+- [9. Linguagens utilizadas](#9-linguagens-utilizadas)
 
 ---
 
 ## 1. Pokémon GO
+![pokemon-go-jogo](/img-readme/pokemon-go-jogo.jpeg)
 
-O jogo consiste em uma interação do usuário com um mapa baseado no mundo real (inicialmente o Google Maps e atualmente o OpenStreetMap). O jogador se localiza e procura Pokémon por meio desse mapa. À medida que ele se desloca, o aplicativo vibra para avisar sobre a presença das criaturas virtuais pelo caminho. Ao tocar a tela do smartphone é possível visualizar o Pokémon no mesmo local onde o jogador está, pois, o jogo sobrepõe à visualização da câmara a imagem do Pokémon e simula que ele está no local onde o jogador se encontra, semelhantemente à realidade virtual. Para capturar o monstrinho.
+O jogo Pokémon GO consiste em uma interação do usuário com um mapa baseado no mundo real (inicialmente o Google Maps e atualmente o OpenStreetMap). O jogador se localiza e procura Pokémon por meio desse mapa. À medida que ele se desloca, o aplicativo vibra para avisar sobre a presença das criaturas virtuais pelo caminho. Ao tocar a tela do smartphone é possível visualizar o Pokémon no mesmo local onde o jogador está, pois, o jogo sobrepõe à visualização da câmara a imagem do Pokémon e simula que ele está no local onde o jogador se encontra, semelhantemente à realidade virtual. Para capturar o monstrinho.
 
 
 ## 2. Definição do Produto
 
-O Pokemon Guide foi desenvolvido com o objetivo de auxiliar os jogadores de Pokémon Go a obter uma melhor experiência dentro do jogo. Para isso, esta aplicação tem a missão de prover informações importantes aos usuários que facilite suas estratégias e a jogabilidade de forma acertiva, rápida e divertida. 
-O seu design foi desenvolvido pensando principalmente em um modelo mobile, que é proporcional ao modelo que o jogador mais usa, sendo o mais versatil para caçar pokemons. 
+O Pokemon Guide foi desenvolvido com o objetivo de auxiliar os jogadores de Pokémon Go a obter uma melhor experiência dentro do jogo. Para isso, esta aplicação tem a missão de prover informações importantes aos usuários que facilite suas estratégias e a jogabilidade de forma acertiva, rápida e divertida.
 
 
-## 3. O problema vs A solução
-
-O mundo dos jogos do Pokémon é muito vasto, existem inúmeros pokémons de diversos tipos, diferentes regiões. Atualmente existem 891 tipos de pokémons distribuidos em dez regiões e por mais fã que seja, é quase impossível, saber as informações de todos.
-Para isso o Pokémon Guide vem para auxiliar nosso jogador servindo como um guia com todos os pokemons existentes e que traga informações relevantes para ele.
-
-## 4. Usuários
+## 3. Pesquisa com Usuários
 ### A pesquisa
-
-Para a pesquisa de usuário foi utilizado **Google Forms** visando identificar a idade dos usuários e quais são suas preferencias e necessidades dentro do jogo.
+Para a pesquisa de usuário foi utilizado **Google Forms** visando identificar a média de idade dos nossos usuários e quais são suas preferencias e necessidades dentro do jogo.
 
 Os resultados foram: 
 
-- 41,2% dos usuários tem a idade entre 18 a 26 anos e 29,4% são adultos com mais de 30 anos.
+- 40% dos usuários tem a idade entre 18 a 26 anos e 25% são adultos com mais de 30 anos.
 
-![idade](/src/styles/img/idade.jpeg)
-
--  A funcionalidade que o nosso usuário mais gosta no jogo é a Captura de Pokemons com 64,3%.
-
-![funcional_captura](/src/styles/img/funcional_captura.jpeg)
+![age](/img-readme/age.jpeg)
 
 - Para nossos usuários a informação mais importante sobre os Pokemons é a Raridade com 50%.
-![tipo_raridade](/src/styles/img/tipo_raridade.jpeg)
+![pesquisa-raridade](/img-readme/pesquisa-raridade.jpeg)
 
-- O Pokemon que nossos usuários mais gostam de capturar no jogo é o tipo Shiny com 41,2%.
-![pesquisa_shiny](/src/styles/img/pesquisa_shiny.jpeg)
+- O Pokemon que nossos usuários mais gostam de capturar no jogo é o tipo *Shiny* com 41,2%.
+![pesquisa-shiny](/img-readme/pesquisa-shiny.jpeg)
 
 
-#### Histórias de usuários
+## 4. O problema vs A solução
 
-Após a análise das respostas entrevistamos dois usuários:
+Após entrevistas verificamos duas principais necessidades que nossos usuários gostariam de ter acesso para ter uma melhor experiência no jogo, a primeira foi poder visualizar um tipo raro de Pokémon chamado *Shiny*, inclusive na nossa pesquisa foi o tipo de Pokemon que mais os jogadores gostariam de capturar e a segunda foi poder saber quais possiveis Pokemons vem em cada ovo e sua respectiva quantidade de Km necessaria para eclodir. Para solucionar trouxemos para o nosso guia funcionalidades necessárias para cada problema.
 
-**História 1**
-
-![protoperson1](/src/styles/img/protoperson1.png)
-
-Critério de aceitação: A interface deve mostrar todos os pokémons shiny em cards especiais na tela para que o usuário possa visualizar como é a versão shiny de cada pokemon.
-Definição de pronto: O código retorna perfeitamente a funcionabilidade, código no repositório, teste de usabilidade.
-
-**História 2**
-
-![protoperson2](/src/styles/img/protoperson2.png)
-
-Critério de aceitação: O site deve conseguir filtrar por pokemon a quantidade necessária de km para eclodir o ovo.
-Definição de pronto: O código retorna perfeitamente a funcionabilidade, código no repositório, teste de usabilidade.
-
+![pxs](/img-readme/pxs.png)
 
 ## 5. Protótipos
 
@@ -80,28 +62,40 @@ A paleta de cores foi escolhida baseada nas cores principais do logo.
 
 ![color-palette](/img-readme/color-palette.png)
 
-### Protótipo de baixa fidelidade
-**Página inicial**
-![low-prototype](/img-readme/index-low-prototype.jpg)
-
-**Filtros e Cards**
-![low-prototype](/img-readme/main-low-prototype.jpg)
-
 ### Protótipo de alta fidelidade
-Utilizamos a ferramente Mockflow para o protótipo de alta fidelidade:
+O seu design foi desenvolvido pensando em um modelo mobile, que é proporcional ao modelo que o jogador mais usa, sendo o mais versatil para ele utilizar durante o jogo na rua caçando Pokémons.
 
-**Página inicial**
-![prototype-index](/img-readme/prototype-index.png) 
+![prototipo-telainicial](/img-readme/prototipo-telainicial.png)  ![prototipo-mobile-pokemon.png](/img-readme/prototipo-mobile-pokemon.png)
 
-## 6. Testes de usabilidade
-
-## 7. Sobre as desenvolvedoras
+## 6. Teste de Usabilidade
+Realizamos testes de usuabilidade com nossos usuários, onde opiniram e sugeriram direntes formas de trazer os dados, assim como diferentes imagens, realizamos modicações com base nos feedbacks.
 
 
-## 8. Linguagens utilizadas
+## 7. Produto final
 
-HTML5
-CSS3
-Node.JS
-JavaScript
+<h4 align="center"> 
+
+ ![gif-shiny](/img-readme/gif-shiny.gif)  ![eggs-poke](/img-readme/eggs-poke.gif)
+</h4>
+
+*Trouxemos para o tipo Shiny uma interface diferenciada deixando especial a experiência do usuário*
+
+:star:
+### 8. Sobre as desenvolvedoras
+- <a href=“https://github.com/Cahaguiar“>Camila Aguiar</a>
+- <a href=“https://github.com/CassiaCosta“>Cassia Costa</a>
+- <a href=“https://github.com/Fernanda741“>Fernanda Leandra</a>
+- <a href=“https://github.com/DevFranci“>Francieli Mesquita</a>
+- <a href=“https://github.com/lidiannerb“>Lidiani Barbosa</a>
+- <a href=“https://github.com/RaynaraPimenta“>Raynara Pimenta</a>
+- <a href=“https://github.com/taizesantos“>>Taize Santos</a>
+
+
+:desktop_computer:
+### 9. Linguagens utilizadas
+- HTML5
+- CSS
+- Node.js
+- Javascript
+
 
