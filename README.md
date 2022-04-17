@@ -1,17 +1,18 @@
 <h4 align="center"> 
 
 ![logo](/src/styles/img/logo.png)
+</h4>
+
+<h4 align="center"> 
 
 # Pokémon Guide
 
 **Um guia desenvolvido para jogadores do Pokemon GO, a fim de facilitar sua jogabilidade.**
 </h4>
 
-:book:
-:open_book:
-## Índice 
-- [1. Pokémon GO](#1-Pokemon-GO)
-- [2. Definição do Produto](#2-Definição-de-Produto)
+## Índice :open_book:
+- [1. O jogo Pokémon GO](#1-O-jogo-pokemon-go)
+- [2. Pokémon Guide - Definição do Produto](#2-Pokemon-guide-Definição-de-Produto)
 - [3. Pesquisa com Usuários](#4-Pesquisa-com-usuários)
 - [4. O problema vs A solução](#3-o-problema-vs-a-solução)
 - [5. Protótipos](#5-protótipos)
@@ -22,33 +23,31 @@
 
 ---
 
-## 1. Pokémon GO
+## 1. O jogo Pokémon GO
 ![pokemon-go-jogo](/img-readme/pokemon-go-jogo.jpeg)
 
 O jogo Pokémon GO consiste em uma interação do usuário com um mapa baseado no mundo real (inicialmente o Google Maps e atualmente o OpenStreetMap). O jogador se localiza e procura Pokémon por meio desse mapa. À medida que ele se desloca, o aplicativo vibra para avisar sobre a presença das criaturas virtuais pelo caminho. Ao tocar a tela do smartphone é possível visualizar o Pokémon no mesmo local onde o jogador está, pois, o jogo sobrepõe à visualização da câmara a imagem do Pokémon e simula que ele está no local onde o jogador se encontra, semelhantemente à realidade virtual. Para capturar o monstrinho.
 
 
-## 2. Definição do Produto
+## 2. Pokémon Guide - Definição do Produto
 
 O Pokemon Guide foi desenvolvido com o objetivo de auxiliar os jogadores de Pokémon Go a obter uma melhor experiência dentro do jogo. Para isso, esta aplicação tem a missão de prover informações importantes aos usuários que facilite suas estratégias e a jogabilidade de forma acertiva, rápida e divertida.
 
 
 ## 3. Pesquisa com Usuários
 ### A pesquisa
-Para a pesquisa de usuário foi utilizado **Google Forms** visando identificar a média de idade dos nossos usuários e quais são suas preferencias e necessidades dentro do jogo.
+Para a pesquisa de usuário foi utilizado **Google Forms** visando identificar quais são suas preferencias e necessidades dentro do jogo.
 
 Os resultados foram: 
-
-- 40% dos usuários tem a idade entre 18 a 26 anos e 25% são adultos com mais de 30 anos.
-
-![age](/img-readme/age.jpeg)
 
 - Para nossos usuários a informação mais importante sobre os Pokemons é a Raridade com 50%.
 ![pesquisa-raridade](/img-readme/pesquisa-raridade.jpeg)
 
-- O Pokemon que nossos usuários mais gostam de capturar no jogo é o tipo *Shiny* com 41,2%.
+- O Pokemon que nossos usuários mais gostam de capturar no jogo é o tipo *Shiny* com 47,4%.
 ![pesquisa-shiny](/img-readme/pesquisa-shiny.jpeg)
 
+- 75% dos nossos usuários gostariam de ter informações sobre qual Pokemon vem dentro do ovo e sua respectiva Km necessária para isso.
+![km-eggs](/img-readme/km-eggs.jpeg)
 
 ## 4. O problema vs A solução
 
@@ -78,21 +77,20 @@ Realizamos testes de usuabilidade com nossos usuários, onde opiniram e sugerira
  ![gif-shiny](/img-readme/gif-shiny.gif)  ![eggs-poke](/img-readme/eggs-poke.gif)
 </h4>
 
-*Trouxemos para o tipo Shiny uma interface diferenciada deixando especial a experiência do usuário*
+:star:*Trouxemos para o tipo Shiny uma interface diferenciada deixando especial a experiência do usuário*
 
-:star:
 ### 8. Sobre as desenvolvedoras
-- <a href=“https://github.com/Cahaguiar“>Camila Aguiar</a>
-- <a href=“https://github.com/CassiaCosta“>Cassia Costa</a>
-- <a href=“https://github.com/Fernanda741“>Fernanda Leandra</a>
-- <a href=“https://github.com/DevFranci“>Francieli Mesquita</a>
-- <a href=“https://github.com/lidiannerb“>Lidiani Barbosa</a>
-- <a href=“https://github.com/RaynaraPimenta“>Raynara Pimenta</a>
-- <a href=“https://github.com/taizesantos“>>Taize Santos</a>
+- <a href="https://github.com/Cahaguiar">Camila Aguiar</a>
+- <a href="https://github.com/CassiaCosta">Cassia Costa</a>
+- <a href="https://github.com/Fernanda741">Fernanda Leandra</a>
+- <a href="https://github.com/DevFranci">Francieli Mesquita</a>
+- <a href="https://github.com/lidiannerb">Lidiani Barbosa</a>
+- <a href="https://github.com/RaynaraPimenta">Raynara Pimenta</a>
+- <a href="https://github.com/taizesantos">Taize Santos</a>
 
 
-:desktop_computer:
-### 9. Linguagens utilizadas
+
+ ### 9. Linguagens utilizadas :desktop_computer:
 - HTML5
 - CSS
 - Node.js
